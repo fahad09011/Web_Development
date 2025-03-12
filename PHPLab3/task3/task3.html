@@ -1,0 +1,54 @@
+  <!-- File Name: task3.html
+  Description: this file contains the form
+  Name: Muhmmad Fahad
+  Student ID : c00311349
+  Date: 26/02/2025 -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task3style.css">
+</head>
+<body>
+    <form action="task3insert.php" class="form" id="form" method="post"> 
+        <div class="inputmain">
+            <label for="name">Student Name</label>
+            <!-- pattern="(/^[A-Za-z]+$/)"
+             this pattern only allow text as name  -->
+            <input type="text" name="name"  id="name"   placeholder="firstName" autocomplete="off" required>
+        </div>
+
+
+        <div class="inputmain">
+            <label for="address">Student Address</label>
+             <!-- pattern="(/^[A-Za-z]+$/)"
+             this pattern only allow text as address  -->
+             <input type="text" name="address" id="address"  placeholder="ENter your address" autocomplete="off" required>
+        </div>
+        <div class="inputmain">
+            <label for="phone">Student Phone Number</label>
+            <input type="text" name="phone_number" id="phone" pattern="^[0-9 ()-]+" placeholder="Enter your phone number" autocomplete="off">
+        </div>
+
+        
+        <div class="inputmain">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" placeholder="last name" required>
+        </div>
+
+        <div class="inputmain">
+            <label for="course_code">Course Code</label>
+            <input type="text" name="course_code" id="course_code" pattern="[A-Za-z]{2}\d{3}" placeholder="Enter Your course code" autocomplete="off" title="Course Code must the this pattern 2alphabet with following 3 digits">
+        </div>
+
+        <div class="form_buttons">
+            <input type="submit" class="form_button" value="submit">
+            <input type="reset" class="form_button" value="Clear">
+        </div>
+    </form>
+    <script src="task3script.js"></script>
+</body>
+</html>

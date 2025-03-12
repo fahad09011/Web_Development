@@ -1,0 +1,126 @@
+/**
+ * File Name: style.css
+ * Description: this file contains the styling of pages/files.
+ * Name: Muhmmad Fahad
+ * Student ID : c00311349
+ * Date: 26/02/2025
+ 
+ */
+/*
+ * is used to apply style on all elements on the page
+mostly it is used to remove the pre (defualt style) from the page
+ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    
+    background-color: var(--color01);
+   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+  
+  }
+.bt{    margin-top: 10px;
+
+    background-color: black;
+
+}
+  /* 
+:root is used to create variables in css the variables stores the styling ,we can use it anywhere in the file ( re-useability)  
+  */
+  :root {
+    --color01: #dce1dd;
+    --color02: #ebece7;
+    --color03: #646566;
+    --color04: #d9d8e8;
+    --color06: rgb(30, 34, 34);
+    --bordercolor: rgb(63 60 60);
+    --containerPadding: 14px;
+    --ContainerOutsideMargin: 20px;
+    --borderRadius: 20px;
+  }
+
+  /*it conatains the styling of form container
+  var() function is used to use variables for styling  */
+ .form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    gap: 30px;
+    background-color: var(--color02);
+    box-shadow: 2px 3px 2px 2px var(--bordercolor);
+    border-radius: var(--borderRadius);
+    padding: var(--containerPadding);
+  }
+
+  
+  /* booking button */
+  .booking-button-container {
+   
+    display: flex;
+    justify-content: center;
+  }
+  /* the transition : amkes the button animated when the user click or hover on button */
+  .form_button {
+    width: 200px;
+    background-color: var(--color03);
+    border: none;
+    border-radius: var(--borderRadius);
+    padding: 10px;
+    cursor: pointer;
+    color: var(--color01);
+   
+    font-size: 1rem;
+    transition: transform 0.02s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  .form_button:hover {
+    background-color: var(--color02);
+    color: var(--color03);
+    border: 2px solid var(--color03);
+  }
+  .form_button:active {
+    transform: scale(0.5);
+  }
+  
+  
+  
+  .inputmain {
+    border: 2px solid rgba(0, 0, 0, 0.041);
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(113, 106, 106, 0.071);
+  }
+  /* here i give style to input fileds */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="submt"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .inputmain:hover {
+    transform: scale(1.01);
+    transition: transform ease-in 0.3s;
+  }
+  /* when the user click on input fileds the style will change according to this */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="text"]:focus,
+  input[type="time"]:focus,
+  input[type="number"]:focus {
+    background-color: rgba(43, 45, 45, 0.212);
+  }
+  
