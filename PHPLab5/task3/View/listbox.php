@@ -40,6 +40,7 @@ if (isset($_GET['id'])) {
     </script>
 </head>
 <body>
+    
     <h2>Select Person</h2>
 
     <!-- Dropdown Form -->
@@ -140,6 +141,16 @@ if (isset($_GET['id'])) {
         <?php endwhile; ?>
     </table>
     
+<header>
+        <nav>
+            <ul>
+                <li><a href="../Add/task2.php" class="btn">Add Person</a></li>
+                <li><a href="../report/report.php" class="btn">Person Report</a></li>
+                <li><a href="../Amend_View/listbox.php" class="btn">Amen/View Details</a></li>
+                <li><a href="../menu.php" class="btn">Main Page</a></li>
+            </ul>
+        </nav>
+    </header>
 <form action="../menu.php" method="post">
     <button type="submit" class="btn bt" value="Return to insert Page"> Return to Main Page</button>
     

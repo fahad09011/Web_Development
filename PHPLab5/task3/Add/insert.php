@@ -6,7 +6,29 @@
  
  
 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link rel="stylesheet" href="../stle.css">
+</head>
+<body>
+    
+<header>
+        <nav>
+            <ul>
+                <li><a href="../Add/task2.php" class="btn">Add Person</a></li>
+                <li><a href="../View/listbox.php" class="btn">View Record</a></li>
+                <li><a href="../Amend_View/listbox.php" class="btn">Amen/View Details</a></li>
+                <li><a href="../menu.php" class="btn">Main Page</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+</body>
+</html>
 <?php
  // it include db.inc.php file to insert.php "include is a predefined function"
 include( './dbConnection.php');

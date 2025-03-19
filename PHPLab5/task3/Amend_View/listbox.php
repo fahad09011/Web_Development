@@ -17,9 +17,22 @@ $result = $con->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
+
+
+    <link rel="stylesheet" href="../stle.css">
 </head>
 <body>
-    <h2>Select Person</h2>
+    
+<header>
+        <nav>
+            <ul>
+                <li><a href="../Add/task2.php" class="btn">Add Person</a></li>
+                <li><a href="../View/listbox.php" class="btn">View Record</a></li>
+                <li><a href="../report/report.php" class="btn">Person Report</a></li>
+                <li><a href="../menu.php" class="btn">Main Page</a></li>
+            </ul>
+        </nav>
+    </header>   <h2>Select Person</h2>
     <form action="AmendView.html.php" method="get">
         <select name="id">
 <?php

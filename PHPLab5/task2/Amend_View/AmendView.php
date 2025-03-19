@@ -14,7 +14,7 @@ $phone = $_POST['phone'];
 $dob = $_POST['dob'];
 
 // Update the record in the database
-$sql = "UPDATE `Person` SET `personID`='[value-1]',`firstName`='$name',`lastName`='$lname',`EmailAddress`='$email',`PhoneNumber`='$phone',`DOB`='$dob' WHERE `personID` = '$id' ;";
+$sql = "UPDATE `Person` SET `firstName`='$name',`lastName`='$lname',`EmailAddress`='$email',`PhoneNumber`='$phone',`DOB`='$dob' WHERE `personID` = '$id' ;";
 
 if ($con->query($sql) === TRUE) {
     echo "Record updated successfully!";

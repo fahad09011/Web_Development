@@ -19,10 +19,13 @@ mostly it is used to remove the pre (defualt style) from the page
     
     background-color: var(--color01);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     height: 100vh;
   
+  }
+  .div{
+
   }
   /* 
 :root is used to create variables in css the variables stores the styling ,we can use it anywhere in the file ( re-useability)  

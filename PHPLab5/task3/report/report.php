@@ -29,8 +29,21 @@ while ($row = $select_query->fetch_assoc()) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Person Report</title>
     <link rel="stylesheet" href="style.css"> <!-- Fixed typo in CSS file name -->
+    
+    <link rel="stylesheet" href="../stle.css">
 </head>
 <body>
+    
+<header>
+        <nav>
+            <ul>
+                <li><a href="../Add/task2.php" class="btn">Add Person</a></li>
+                <li><a href="../View/listbox.php" class="btn">View Record</a></li>
+                <li><a href="../Amend_View/listbox.php" class="btn">Amen/View Details</a></li>
+                <li><a href="../menu.php" class="btn">Main Page</a></li>
+            </ul>
+        </nav>
+    </header>
     <h1>Person Report</h1>
     <form action="" method="POST" class="form" id="form">
         <button type="submit" class="button buttons" name="sort" value="EmailAddress">Sort by Email</button>
@@ -62,7 +75,7 @@ while ($row = $select_query->fetch_assoc()) {
     </table>
 
     <!-- Return to Menu Button -->
-    <a href="../task3/menu.php"><button type="button">Return to Menu</button></a>
+    <a href="../menu.php"><button type="button">Return to Menu</button></a>
 
     <script>
         let allButtons = document.querySelectorAll(".buttons");

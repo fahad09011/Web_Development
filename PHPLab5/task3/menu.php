@@ -13,7 +13,7 @@
                 <li><a href="../task3/Add/task2.php" class="btn">Add Person</a></li>
                 <li><a href="../task3/View/listbox.php" class="btn">View Record</a></li>
                 <li><a href="../task3/Amend_View/listbox.php" class="btn">Amen/View Details</a></li>
-                <li><a href="../report/report.php" class="btn">Person's Report</a></li>
+                <li><a href="../task3/report/report.php" class="btn">Person's Report</a></li>
             </ul>
         </nav>
     </header>
