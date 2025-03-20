@@ -1,9 +1,11 @@
-
 <?php
 // SELECT `Login_name`, `password` FROM `user` WHERE `Login_name` = ''  AND  `password` = '' ;
 // here is databse connection file 
-include './DBconnectio.php';
 session_start();
+include './DBconnectio.php';
+
+// max attempts 
+$max_attempt = 3;
 
 // here cgecking the form form if the form method is "POST" then the if statement runs
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,6 +13,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $loginName = $_POST['email'];
     $password  = $_POST['Password'];
     // its a sql statemtn for select the user by name/email
+
+
+    // check if the user is block or the use exceed attempt limit if yes then go to block page 
+    if ($_SESSION['login_attempt'] >= $max_attempt) {
+        header('location:block.php');
+        exit();
+    }
+
     try {
 
         $select_user = $connection->prepare("SELECT * FROM `user` WHERE `Login_name` =:login");
@@ -22,6 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // if you want to use "password_verify()" then you must store your password whith hashing because this function is just working with hashed passwors
         // in my case just use simle comparison "==" / "==="
         if ($user && $password === $user['password']) {
+            // reset the login atempts after suceesfull login to sustem
+            $_SESSION['login_attempt'] = 0;
             // here storing the user data from database in session variables
             $_SESSION['user_id'] = $user['User_ID'];
             $_SESSION['loginName'] = $user['Login_name'];
@@ -33,10 +45,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo " succesfull Login";
             exit();
         } else {
+
+            $_SESSION['login_attempt']++;
+            if ($_SESSION['login_attempt'] >= $max_attempt) {
+                header('location:block.php');
+                exit();
+            } else {
+                echo "invalid user name and password. Remain Attempts: " . ($max_attempt - $_SESSION['login_attempt']);
+            }
+
+
+
             echo "inavlid apssowrd or use name";
-            echo "
-<script>alert('Invalid Password or User Name')</script>";
-           
         }
     } catch (PDOException $e) {
         error_log("database error check login.php file" . $e->getMessage());
