@@ -1,0 +1,38 @@
+<?php
+require './authentication.php';
+require './DBconnection.php';
+
+$stmt = $pdo->query("SELECT id, name, email FROM persons WHERE deleted = 0");
+$persons = $stmt->fetchAll();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Records</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="records-container">
+        <h2>Active Records</h2>
+        <?php if (empty($persons)): ?>
+            <p>No records found.</p>
+        <?php else: ?>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                <?php foreach ($persons as $person): ?>
+                <tr>
+                    <td><?= htmlspecialchars($person['id']) ?></td>
+                    <td><?= htmlspecialchars($person['name']) ?></td>
+                    <td><?= htmlspecialchars($person['email']) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        <?php endif; ?>
+        <a href="./menu.php">Back to Menu</a>
+    </div>
+</body>
+</html>
